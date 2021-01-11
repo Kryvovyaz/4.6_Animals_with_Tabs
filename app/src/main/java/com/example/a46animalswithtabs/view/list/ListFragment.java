@@ -63,18 +63,24 @@ public class ListFragment extends Fragment {
                 // You need to scroll manually to page 2 first to make it work afterwards
                 // getActivity will return parent FragmentActivity that the fragments live in.
                 // We need to cast to MainActivity to access our methods.
-                ((MainActivity) getActivity()).scrollViewPager(1);
+                ((MainActivity) getActivity()).viewPager.setCurrentItem(1);
             }
         });
     }
 
     public void populateAnimalsList() {
         String[] animals = getResources().getStringArray(R.array.animals_english);
-        String[] images = getResources().getStringArray(R.array.pictures);
-
+        String[] images = getResources().getStringArray(R.array.animals_pictures);
+        String[] sound_effects = getResources().getStringArray(R.array.animals_sounds_effect);
+        String[] sounds = getResources().getStringArray(R.array.animals_sounds_english);
         for (int i = 0; i < animals.length; i++) {
-            int imageId = getResources().getIdentifier(images[i], "drawable", getActivity().getPackageName());
-            animals_list.add(new Animal(animals[i], imageId));
+            int imageId = getResources().getIdentifier(images[i], "drawable", getActivity()
+                    .getPackageName());
+            int sound_effectID = getResources().getIdentifier(sound_effects[i], "raw", getActivity()
+                    .getPackageName());
+            int sound_englishID = getResources().getIdentifier(sounds[i], "raw", getActivity()
+                    .getPackageName());
+            animals_list.add(new Animal(animals[i], imageId,sound_effectID,sound_englishID));
         }
     }
 

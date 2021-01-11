@@ -1,19 +1,34 @@
 <resources>
-    <string name="app_name">4.6 Animals with Tabs</string>
+    <string name="app_name">Learn Animals Sat Project</string>
+
+    <string name="todo">TODO</string>
+    <string name="animal">Animal</string>
     <string-array name="animals_english">
         <item>Dog</item>
         <item>Cat</item>
         <item>Cow</item>
         <item>Horse</item>
         <item>Bird</item>
-        <item>Mice</item>
+        <item>Deer</item>
         <item>Pig</item>
         <item>Sheep</item>
         <item>Bunny</item>
         <item>Monkey</item>
-    </string-array>
 
-    <string-array name="pictures">
+    </string-array>
+    <string-array name="animals_russian">
+        <item>Собака</item>
+        <item>Кошка</item>
+        <item>Корова</item>
+        <item>Лощадь</item>
+        <item>Птица</item>
+        <item>Олень</item>
+        <item>Свинья</item>
+        <item>Овца</item>
+        <item>Заяц</item>
+        <item>Обезьяна</item>
+    </string-array>
+    <string-array name="animals_pictures">
         <item>picture0</item>
         <item>picture1</item>
         <item>picture2</item>
@@ -25,4 +40,63 @@
         <item>picture8</item>
         <item>picture9</item>
     </string-array>
+
+    <string-array name="animals_sounds_effect">
+        <item>dog</item>
+        <item>cat</item>
+        <item>cow</item>
+        <item>horse</item>
+        <item>bird</item>
+        <item>deer</item>
+        <item>pig</item>
+        <item>sheep</item>
+        <item>bunny</item>
+        <item>monkey</item>
+    </string-array>
+
+    <string-array name="animals_sounds_english">
+        <item>dog_english</item>
+        <item>cat_english</item>
+        <item>cow_english</item>
+        <item>horse_english</item>
+        <item>bird_english</item>
+        <item>deer_english</item>
+        <item>pig_english</item>
+        <item>sheep_english</item>
+        <item>bunny_english</item>
+        <item>monkey_english</item>
+    </string-array>
+    <string-array name="animals_sounds_russian">
+        <item>dog_russian</item>
+        <item>cat_russian</item>
+        <item>cow_russian</item>
+        <item>horse_russian</item>
+        <item>bird_russian</item>
+        <item>deer_russian</item>
+        <item>pig_russian</item>
+        <item>sheep_russian</item>
+        <item>bunny_russian</item>
+        <item>monkey_russian</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dog">DOG</string>
+    <string name="dogs_were_probably_the_first_tame_animals_they_have_accompanied_humans_for_at_least_20_000_years_and_possibly_as_many_as_40_000_scientists_generally_agree_that_all_dogs_domestic_and_wild_share_a_common_wolf_ancestor_at_some_point_grey_wolves_and_dogs_went_on_their_separate_evolutionary_ways_dog_breeds_today_humans_have_bred_hundreds_of_different_domestic_dog_breeds_some_of_which_could_never_survive_in_the_wild_despite_their_many_shapes_and_sizes_all_domestic_dogs_from_newfoundlands_to_pugs_are_members_of_the_same_species_canis_familiaris_although_they_have_domestic_temperaments_dogs_are_related_to_wolves_foxes_and_jackals_similarities_to_wild_relatives_domestic_dogs_still_share_many_behaviors_with_their_wild_relatives_both_defend_their_territories_and_mark_them_by_urinating_on_trees_rocks_fence_posts_and_other_suitable_sites_these_scent_posts_serve_notice_to_other_dogs_that_an_animal_is_occupying_its_territory_many_pet_dogs_also_bury_bones_or_favorite_toys_for_future_use_just_as_their_wild_relatives_sometimes_bury_a_kill_to_secure_the_meat_for_later_feasts_communication_dogs_communicate_in_several_ways_scent_is_one_method_another_is_physical_appearance_body_position_movement_and_facial_expression_often_convey_a_strong_message_many_of_these_signals_are_recognizable_even_to_humans_such_as_the_excited_tail_wagging_of_a_happy_dog_or_the_bared_teeth_of_an_angry_or_threatened_animal_vocally_dogs_communicate_with_a_cacophony_of_sounds_including_barks_growls_and_whines_working_dogs_domestic_dogs_serve_as_more_than_companions_many_earn_their_keep_by_working_hard_dogs_herd_livestock_aid_hunters_guard_homes_and_perform_police_and_rescue_work_some_special_animals_even_guide_the_blind_a_poignant_symbol_of_the_dog_s_longstanding_role_as_man_s_best_friend">Dogs were probably the first tame animals. They have accompanied humans for at least 20,000 years and possibly as many as 40,000. Scientists generally agree that all dogs, domestic and wild, share a common wolf ancestor; at some point grey wolves and dogs went on their separate evolutionary ways. Dog Breeds Today humans have bred hundreds of different domestic dog breeds—some of which could never survive in the wild. Despite their many shapes and sizes all domestic dogs, from Newfoundlands to pugs, are members of the same species—Canis familiaris. Although they have domestic temperaments, dogs are related to wolves, foxes, and jackals. Similarities to Wild Relatives Domestic dogs still share many behaviors with their wild relatives. Both defend their territories and mark them by urinating on trees, rocks, fence posts, and other suitable sites. These scent posts serve notice to other dogs that an animal is occupying its territory. Many pet dogs also bury bones or favorite toys for future use, just as their wild relatives sometimes bury a kill to secure the meat for later feasts. Communication Dogs communicate in several ways. Scent is one method, another is physical appearance. Body position, movement, and facial expression often convey a strong message. Many of these signals are recognizable even to humans, such as the excited tail-wagging of a happy dog or the bared teeth of an angry or threatened animal. Vocally, dogs communicate with a cacophony of sounds including barks, growls, and whines. Working Dogs Domestic dogs serve as more than companions; many earn their keep by working hard. Dogs herd livestock, aid hunters, guard homes, and perform police and rescue work. Some special animals even guide the blind—a poignant symbol of the dog\'s longstanding role as man\'s best friend.</string>
+    <string name="title_activity_language">Leanback Title</string>
+    <string name="browse_title">Videos by Your Company</string>
+    <string name="related_movies">Related Videos</string>
+    <string name="grid_view">Grid View</string>
+    <string name="error_fragment">Error Fragment</string>
+    <string name="personal_settings">Personal Settings</string>
+    <string name="watch_trailer_1">Watch trailer</string>
+    <string name="watch_trailer_2">FREE</string>
+    <string name="rent_1">Rent By Day</string>
+    <string name="rent_2">From $1.99</string>
+    <string name="buy_1">Buy and Own</string>
+    <string name="buy_2">AT $9.99</string>
+    <string name="movie">Movie</string>
+
+    <!-- Error messages -->
+    <string name="error_fragment_message">An error occurred</string>
+    <string name="dismiss_error">Dismiss</string>
 </resources>

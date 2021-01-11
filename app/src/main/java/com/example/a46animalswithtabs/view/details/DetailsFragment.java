@@ -1,10 +1,12 @@
 package com.example.a46animalswithtabs.view.details;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,38 +17,27 @@ import androidx.fragment.app.FragmentResultListener;
 
 import com.example.a46animalswithtabs.R;
 import com.example.a46animalswithtabs.data.Animal;
-import com.example.a46animalswithtabs.view.MainActivity;
 
 import static com.example.a46animalswithtabs.view.list.ListFragment.KEY_ANIMAL_BUNDLE;
 import static com.example.a46animalswithtabs.view.list.ListFragment.LIST_FRAGMENT_REQUEST_CODE;
 
 public class DetailsFragment extends Fragment {
-
+    MediaPlayer player;
     private TextView titleText;
-    private TextView detailsText;
     private ImageView animalImage;
 
     // Initial values
-    private String title = "Bird";
-    private String decription = "Birds are a group of warm-blooded vertebrates constituting " +
-            "the class Aves /ˈeɪviːz/, characterized by feathers, toothless beaked jaws, " +
-            "the laying of hard-shelled eggs, a high metabolic rate, a four-chambered heart, " +
-            "and a strong yet lightweight skeleton. Birds live worldwide and range in size from the " +
-            "5.5 cm (2.2 in) bee hummingbird to the 2.8 m (9 ft 2 in) ostrich. There are about ten " +
-            "thousand living species, more than half of which are passerine, or \"perching\" birds. " +
-            "Birds have wings whose development varies according to species; the only known groups " +
-            "without wings are the extinct moa and elephant birds. Wings, which evolved from forelimbs, " +
-            "gave birds the ability to fly, although further evolution has led to the loss of flight in some birds, " +
-            "including ratites, penguins, and diverse endemic island species. The digestive and respiratory systems of " +
-            "birds are also uniquely adapted for flight. Some bird species of aquatic environments, " +
-            "particularly seabirds and some waterbirds, have further evolved for swimming.";
-
-    private int imageID = R.drawable.picture4;
+    private String title = "Dog";
+    private int imageID = R.drawable.picture0;
+    private Button make_sound;
+    private int sound_effectID = R.raw.dog;
+    private Button make_say;
+    private int sound = R.raw.dog_english;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_details, container, false);
     }
 
@@ -56,13 +47,30 @@ public class DetailsFragment extends Fragment {
 
         // Reference your views
         titleText = view.findViewById(R.id.fragment_details_title_text);
-        detailsText = view.findViewById(R.id.fragment_details_details_text);
+        make_sound = view.findViewById(R.id.make_sound);
         animalImage = view.findViewById(R.id.fragment_details_image);
 
         titleText.setText(title);
-        detailsText.setText(decription);
         animalImage.setImageResource(imageID);
+//
 
+        make_say = view.findViewById(R.id.make_say);
+        make_say.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                play(v, sound);
+
+            }
+        });
+        make_sound.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                play(v, sound_effectID);
+            }
+        });
         // Listens to the result in FragmentManager
         // If anyone sets a result using LIST_FRAGMENT_REQUEST_CODE key, we will capture it in here
         getParentFragmentManager().setFragmentResultListener(LIST_FRAGMENT_REQUEST_CODE,
@@ -75,8 +83,35 @@ public class DetailsFragment extends Fragment {
                         Log.d("MyApp", "Animal: " + animal.toString());
                         animalImage.setImageResource(animal.getImageId());
                         titleText.setText(animal.getName());
-                        //detailsText.setText(animal.getName());
+                        sound_effectID = animal.getSound_effectID();
+                        sound = animal.getSound();
+                        make_say.setSoundEffectsEnabled(false);
+                        make_sound.setSoundEffectsEnabled(false);
                     }
                 });
     }
+
+    public void play(View v, int id) {
+        if (player != null) {
+            player.release();
+        }
+        player = MediaPlayer.create(getContext(), id);
+        player.start();
+    }
+
+    public void stopPlayer(View v) {
+        if (player != null) {
+            player.release();
+            player = null;
+        }
+    }
+
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        stopPlayer(this.getView());
+    }
+
+
 }

@@ -70,7 +70,7 @@ public class AnimalListAdapter extends RecyclerView.Adapter<AnimalListAdapter.Pe
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(view.getContext(), "Position: " + getAdapterPosition() + " clicked.", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(view.getContext(), "Position: " + getAdapterPosition() + " clicked.", Toast.LENGTH_SHORT).show();
                     // Trigger the callback method
                     itemViewClickListener.onItemClick(getAdapterPosition());
                 }

@@ -1,46 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ImageView
+        android:id="@+id/fragment_details_image"
         android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/make_sound"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/fragment_details_title_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        tools:context=".view.details.DetailsFragment">
+        android:layout_margin="16dp"
 
-        <ImageView
-            android:id="@+id/fragment_details_image"
-            android:layout_width="160dp"
-            android:layout_height="160dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@tools:sample/avatars" />
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/fragment_details_image"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Bird" />
 
-        <TextView
-            android:id="@+id/fragment_details_details_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:textSize="26sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragment_details_image"
-            tools:text="Long explanation" />
+    <Button
+        android:id="@+id/make_sound"
+        android:layout_width="124dp"
+        android:layout_height="107dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/ic_action_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
 
-        <TextView
-            android:id="@+id/fragment_details_title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@color/teal_200"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/fragment_details_image"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:text="Bird" />
+    <Button
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        android:id="@+id/make_say"
+        android:layout_width="124dp"
+        android:layout_height="107dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/ic_action_speek"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

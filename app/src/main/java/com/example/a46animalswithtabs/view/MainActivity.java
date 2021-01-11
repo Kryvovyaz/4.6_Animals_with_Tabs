@@ -12,9 +12,9 @@ import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends FragmentActivity {
 
-    private ViewPager2 viewPager;
+    public ViewPager2 viewPager;
     private TabLayout tabs;
-    private String[] names = {"Main", "Details"};
+    private int[] tabIcons = {R.drawable.ic_action_names, R.drawable.ic_action_pictures};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,7 @@ public class MainActivity extends FragmentActivity {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 // Configure each tab based on their position
-                tab.setText(names[position]);
+                tab.setIcon(tabIcons[position]);
             }
         }).attach();
     }
