@@ -1,26 +1,28 @@
 package com.example.a46animalswithtabs.view;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.a46animalswithtabs.R;
+import com.example.a46animalswithtabs.view.list.AnimalListAdapter;
+import com.example.a46animalswithtabs.view.list.ListFragment;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends FragmentActivity {
-
     public ViewPager2 viewPager;
     private TabLayout tabs;
     private int[] tabIcons = {R.drawable.ic_action_names, R.drawable.ic_action_pictures};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         // Reference your views
         viewPager = findViewById(R.id.main_activity_view_pager);
         tabs = findViewById(R.id.main_activity_tabs);
@@ -43,3 +45,4 @@ public class MainActivity extends FragmentActivity {
         viewPager.setCurrentItem(1);
     }
 }
+

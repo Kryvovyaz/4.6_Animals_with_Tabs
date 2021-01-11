@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.a46animalswithtabs.LanguageActivity;
 import com.example.a46animalswithtabs.R;
 import com.example.a46animalswithtabs.data.Animal;
 import com.example.a46animalswithtabs.view.MainActivity;
@@ -72,7 +73,7 @@ public class ListFragment extends Fragment {
         String[] animals = getResources().getStringArray(R.array.animals_english);
         String[] images = getResources().getStringArray(R.array.animals_pictures);
         String[] sound_effects = getResources().getStringArray(R.array.animals_sounds_effect);
-        String[] sounds = getResources().getStringArray(R.array.animals_sounds_english);
+        String[] sounds = getResources().getStringArray(R.array.animals_sounds_russian);
         for (int i = 0; i < animals.length; i++) {
             int imageId = getResources().getIdentifier(images[i], "drawable", getActivity()
                     .getPackageName());
