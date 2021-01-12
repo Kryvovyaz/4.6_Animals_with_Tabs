@@ -64,7 +64,7 @@ public class ListFragment extends Fragment {
                 // You need to scroll manually to page 2 first to make it work afterwards
                 // getActivity will return parent FragmentActivity that the fragments live in.
                 // We need to cast to MainActivity to access our methods.
-                ((MainActivity) getActivity()).viewPager.setCurrentItem(1);
+                ((LanguageActivity) getActivity()).viewPager.setCurrentItem(1);
             }
         });
     }

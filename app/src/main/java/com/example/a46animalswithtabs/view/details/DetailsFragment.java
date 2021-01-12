@@ -32,7 +32,7 @@ public class DetailsFragment extends Fragment {
     private Button make_sound;
     private int sound_effectID = R.raw.dog;
     private Button make_say;
-    private int sound = R.raw.dog_english;
+    private int sound = R.raw.dog_russian;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -113,5 +113,10 @@ public class DetailsFragment extends Fragment {
         stopPlayer(this.getView());
     }
 
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
 
+
+    }
 }

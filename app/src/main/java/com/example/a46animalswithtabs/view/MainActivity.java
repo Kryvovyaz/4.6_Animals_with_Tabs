@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.a46animalswithtabs.LanguageActivity;
 import com.example.a46animalswithtabs.R;
 import com.example.a46animalswithtabs.view.list.AnimalListAdapter;
 import com.example.a46animalswithtabs.view.list.ListFragment;
@@ -16,33 +17,24 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class MainActivity extends FragmentActivity {
-    public ViewPager2 viewPager;
-    private TabLayout tabs;
-    private int[] tabIcons = {R.drawable.ic_action_names, R.drawable.ic_action_pictures};
+private  Button button_ru;
+private  Button button_en;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // Reference your views
-        viewPager = findViewById(R.id.main_activity_view_pager);
-        tabs = findViewById(R.id.main_activity_tabs);
+button_ru= findViewById(R.id.button_russian);
+button_en= findViewById(R.id.button_english);
 
-        // Create an instance of your adapter and set it to Viewpager
-        ViewPagerAdapter adapter = new ViewPagerAdapter(this);
-        viewPager.setAdapter(adapter);
+button_ru.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
 
-        // Configure your TabLayout (Title section on the top of the screen)
-        new TabLayoutMediator(tabs, viewPager, new TabLayoutMediator.TabConfigurationStrategy() {
-            @Override
-            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-                // Configure each tab based on their position
-                tab.setIcon(tabIcons[position]);
-            }
-        }).attach();
+        Intent intent = new Intent(v.getContext(), LanguageActivity.class);
+        v.getContext().startActivity(intent);
     }
-
-    public void scrollViewPager(int position) {
-        viewPager.setCurrentItem(1);
+});
     }
 }
-
+;
